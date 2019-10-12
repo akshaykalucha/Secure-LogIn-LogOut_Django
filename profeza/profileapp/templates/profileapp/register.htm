@@ -1,0 +1,144 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'profileapp/style.css' %}">
+    <script src="{% static 'profileapp/script.js' %}"></script>
+</head>
+
+
+
+
+<body>
+    <!--
+        
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <h1>Create Your Account</h1>
+            {% if form.errors %}
+            {% for field in form %}
+            {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {% endif %}
+
+            <h2>Your Name</h2>
+            {{ u_form.name }}
+            <h2>Username</h2>
+            {{ form.username }}
+            <h2>Email</h2>
+            {{ form.email }}
+            <h2>Password</h2>
+            {{ form.password1 }}
+            <h2>Confirm Password</h2>
+            {{ form.password2 }}
+            <a href="#"><button type="submit">Sign Me Up!</button></a>
+        </form>
+        <p>Already Have An Account?<a href="#">Log In</a></p>
+    </div>
+    -->
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <h1>Create Your Account</h1>
+            {% if form.errors %}
+            {% for field in form %}
+            {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {% endif %}
+
+            <h2>Username</h2>
+            <input type="text" name="username">
+            <h2>Email Address</h2>
+            <input type="text" name="email" placeholder="example@email.com">
+            <h2>Password</h2>
+            <input type="password" name="password1">
+            <h2>Confirm Password</h2>
+            <input type="password" name="password2">
+            <a href="#"><button type="submit">Sign Me Up!</button></a>
+        </form>
+        <p>Already Have An Account?<a href="{% url 'profileapp:login' %}">Log In</a></p>
+
+    </div>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+<!--
+<body>
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Register Now</legend>
+                <div class="content1">
+                    <h4>Usersame <span>{{form.username}}</span></h4>
+                </div>
+                <div class="content2">
+                    <h4>Password <span>{{ form.password1 }}</span></h4>
+                </div>
+                <div class="content3">
+                    <h4>Confirm Password <span>{{ form.password2 }}</span></h4>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Register</button>
+            </div>
+        </form>
+        <div class="botder-top pt-3">
+            <small class="text-muted">Already Have An Account? <a href="#">Log In</a>
+            </small>
+        </div>
+    </div>
+
+</body>
+-->
+
+</html>
